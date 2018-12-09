@@ -1,0 +1,4 @@
+{
+    "editor.autoIndent": false,
+    "php.validate.run": "onType"
+}
