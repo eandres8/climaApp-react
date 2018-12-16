@@ -4,21 +4,21 @@ import WeatherIcons from 'react-weathericons';
 
 import {
     CLOUD,
-    CLOUDY,
     SUN,
     RAIN,
     SNOW,
-    WINDY,
+    THUNDER,
+    DRIZZLE,
 } from '../../../constans/weathers';
 
 import './styles.css';
 
 const icons = {
     [CLOUD]: 'cloud',
-    [CLOUDY]: 'cloudy',
+    [THUNDER]: 'day-thunderstorm',
     [RAIN]: 'rain',
     [SNOW]: 'snow',
-    [WINDY]: 'windy',
+    [DRIZZLE]: 'day-showers',
     [SUN]: 'day-sunny',
 }
 

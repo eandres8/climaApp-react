@@ -25,22 +25,19 @@ class WeatherLocation extends Component {
 		const { city } = props;
 
 		this.state = {
-			city: city,
+			city,
 			data: null
 		};
-		//#debug#
-		console.log('constructor');
+		
 	}
 
 	componentDidMount() {
-		//#debug#
-		console.log('componentDidMount');
+		
 		this.handleUpdateClick();
 	}
 	
 	componentDidUpdate(prevProps, prevState) {
-		//#debug#
-		console.log('componentDidUpdate');
+		
 	}
 
 	handleUpdateClick = () => {
@@ -60,10 +57,9 @@ class WeatherLocation extends Component {
 	}
 
 	render() {
-		//#debug#
-		console.log('render');
+		const { onWeatherLocationClick } = this.props;
 		const { city, data } = this.state;
-		return ( <div className = "weatherLocationCont">
+		return ( <div className = "weatherLocationCont" onClick={onWeatherLocationClick}>
 			<Location city = { city }/>
 			{ data ? 
 				<WeatherData data = { data }/> :
@@ -76,6 +72,7 @@ class WeatherLocation extends Component {
 
 WeatherLocation.propTypes = {
 	city: PropTypes.string.isRequired,
+	onWeatherLocationClick: PropTypes.func,
 }
 
 export default WeatherLocation;
