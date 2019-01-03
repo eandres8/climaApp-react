@@ -3,20 +3,11 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { PropTypes } from 'prop-types';
 import './styles.css';
 
-import { SUN } from '../../constans/weathers';
-
 import transformWeather from '../../services/transformWeather';
 import getUrlWeatherByCity from '../../services/getUrlWeatherByCity';
 
 import Location from './Location';
 import WeatherData from './WeatherData';
-
-const data = {
-	temperature: 5,
-	weatherState: SUN,
-	humidity: 10,
-	wind: '10 m/s'
-};
 
 class WeatherLocation extends Component {
 

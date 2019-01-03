@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import LocationList from './components/LocationList';
+import ForecastExtended from './components/ForecastExtended';
 import './App.css';
 
 const cities = [
@@ -18,11 +19,19 @@ const cities = [
 
 class App extends Component {
 
+	constructor() {
+		super();
+		this.state = {
+			city: null
+		};
+	}
+
 	handleSelectedLocation = city => {
-		console.log("city", city );
+		this.setState( { city } );
 	}
 
 	render() {
+		const { city } = this.state;
 		return (
 			<Grid>
 				<Row>
@@ -42,7 +51,13 @@ class App extends Component {
 					</Col>
 					<Col xs={12} md={6}>
 						<Paper elevation={4}>
-							<div className="details"></div>
+							<div className="detail">
+								{
+									city ?
+									<ForecastExtended city={city} /> :
+									<h1>No se ha seleccionado una ciudad</h1>
+								}
+							</div>
 						</Paper>
 					</Col>
 				</Row>
